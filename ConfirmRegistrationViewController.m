@@ -1,11 +1,3 @@
-//
-//  ConfirmRegistrationViewController.m
-//  iff
-//
-//  Created by Binchen Hu on 10/27/17.
-//  Copyright © 2017 tomoreoreo. All rights reserved.
-//
-
 #import "ConfirmRegistrationViewController.h"
 
 #import "BasicInfoViewController.h"
