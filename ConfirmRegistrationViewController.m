@@ -32,10 +32,10 @@
     [[self.user confirmSignUp:self.codeField.text forceAliasCreation:YES] continueWithBlock: ^id _Nullable(AWSTask<AWSCognitoIdentityUserConfirmSignUpResponse *> * _Nonnull task) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if(task.error){
-                    UIAlertController * alert=   [UIAlertController
-                                                  alertControllerWithTitle:task.error.userInfo[@"__type"]
-                                                  message:task.error.userInfo[@"message"]
-                                                  preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertController * alert= [UIAlertController
+                                                alertControllerWithTitle:task.error.userInfo[@"__type"]
+                                                message:task.error.userInfo[@"message"]
+                                                preferredStyle:UIAlertControllerStyleAlert];
                     
                     UIAlertAction* ok = [UIAlertAction
                                          actionWithTitle:@"OK"
@@ -49,10 +49,10 @@
                     
                     [self presentViewController:alert animated:YES completion:nil];
             }else {
-                UIAlertController * alert=   [UIAlertController
-                                              alertControllerWithTitle:@"You have finished!"
-                                              message:@"Now you can use your email address and password to sign in!"
-                                              preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertController * alert= [UIAlertController
+                                            alertControllerWithTitle:@"You have finished!"
+                                            message:@"Now you can use your email address and password to sign in!"
+                                            preferredStyle:UIAlertControllerStyleAlert];
                 
                 UIAlertAction* ok = [UIAlertAction
                                      actionWithTitle:@"OK"
@@ -74,10 +74,10 @@
     [[self.user resendConfirmationCode] continueWithBlock:^id _Nullable(AWSTask<AWSCognitoIdentityUserResendConfirmationCodeResponse *> * _Nonnull task) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (task.error) {
-                UIAlertController * alert=   [UIAlertController
-                                              alertControllerWithTitle:task.error.userInfo[@"__type"]
-                                              message:task.error.userInfo[@"message"]
-                                              preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertController * alert= [UIAlertController
+                                            alertControllerWithTitle:task.error.userInfo[@"__type"]
+                                            message:task.error.userInfo[@"message"]
+                                            preferredStyle:UIAlertControllerStyleAlert];
                 
                 UIAlertAction* ok = [UIAlertAction
                                      actionWithTitle:@"OK"
@@ -89,10 +89,10 @@
                 
                 [alert addAction:ok];
             } else {
-                UIAlertController * notify=   [UIAlertController
-                                              alertControllerWithTitle:@"Code Resent"
-                                              message:[NSString stringWithFormat:@"Code resent to: %@", task.result.codeDeliveryDetails.destination]
-                                              preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertController * notify= [UIAlertController
+                                             alertControllerWithTitle:@"Code Resent"
+                                             message:[NSString stringWithFormat:@"Code resent to: %@", task.result.codeDeliveryDetails.destination]
+                                             preferredStyle:UIAlertControllerStyleAlert];
                 
                 UIAlertAction* ok = [UIAlertAction
                                      actionWithTitle:@"OK"

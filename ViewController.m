@@ -43,10 +43,10 @@
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         if (error) {
-            UIAlertController * alert=   [UIAlertController
-                                          alertControllerWithTitle:error.userInfo[@"__type"]
-                                          message:error.userInfo[@"message"]
-                                          preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController * alert= [UIAlertController
+                                        alertControllerWithTitle:error.userInfo[@"__type"]
+                                        message:error.userInfo[@"message"]
+                                        preferredStyle:UIAlertControllerStyleAlert];
             
             UIAlertAction* retry = [UIAlertAction
                                     actionWithTitle:@"Retry"
